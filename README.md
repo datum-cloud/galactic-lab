@@ -69,4 +69,4 @@ docker build . -t kindest/node:galactic
 
 ## Next Steps
 
-With your environment set up and the custom Kind node built, you're ready to deploy a [lab topology](basic/README.md).
+With your environment set up and the custom Kind node built, you're ready to deploy a [basic lab topology](basic/README.md) or a [geographic lab topology](geo/README.md).
