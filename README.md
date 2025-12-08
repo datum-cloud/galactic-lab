@@ -2,6 +2,14 @@
 
 A testing and demonstration environment for [Galactic VPC](https://www.datum.net/docs/galactic-vpc/), a multi-cloud networking solution. This lab demonstrates multi-region Kubernetes cluster connectivity using SRv6 (Segment Routing over IPv6) packet routing.
 
+There are different approaches to use this lab:
+1. Using [Dev Container](#approach-1-dev-container) is well suited if you use VS Code as your IDE.
+2. Using [Multipass](#approach-2-multipass-vm) if you'd like to run the lab in a dedicated VM.
+3. Using _"Your own choice of Hypervisor"_ if you already have a way to run a Ubuntu/Debian VM. \
+   In this case simply follow from step 2 in the [Multipass](#approach-2-multipass-vm) instructions.
+4. If you are running Ubuntu/Debian Linux on your workstation - we _discourage_ running directly inside of it without a VM or Containers for isolation. \
+   Netlab/Containerlab heavily modify the network configuration of the system, which may break your network connectivity. There be dragons.
+
 
 ## Approach 1: Dev Container
 
@@ -11,6 +19,7 @@ This approach uses VS Code's Dev Container feature to provide a fully configured
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 - [Orbstack](https://orbstack.dev/) (Read the [Containerlab docs for MacOS](https://containerlab.dev/macos/) for details why Docker Desktop will not work here)
+- Kernel Modules - SRv6 and VRF modules must be available in the host kernel.
 
 ### Steps
 
