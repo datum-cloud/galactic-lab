@@ -3,41 +3,15 @@
 A testing and demonstration environment for [Galactic VPC](https://www.datum.net/docs/galactic-vpc/), a multi-cloud networking solution. This lab demonstrates multi-region Kubernetes cluster connectivity using SRv6 (Segment Routing over IPv6) packet routing.
 
 There are different approaches to use this lab:
-1. Using [Dev Container](#approach-1-dev-container) is well suited if you use VS Code as your IDE.
-2. Using [Multipass](#approach-2-multipass-vm) if you'd like to run the lab in a dedicated VM.
+1. Using [Multipass](#approach-1-multipass-vm) if you'd like to run the lab in a dedicated VM.
+2. Using [Dev Container](#approach-2-dev-container) is well suited if you use VS Code as your IDE.
 3. Using _"Your own choice of Hypervisor"_ if you already have a way to run a Ubuntu/Debian VM. \
-   In this case simply follow from step 2 in the [Multipass](#approach-2-multipass-vm) instructions.
+   In this case simply follow from step 2 in the [Multipass](#approach-1-multipass-vm) instructions.
 4. If you are running Ubuntu/Debian Linux on your workstation - we _discourage_ running directly inside of it without a VM or Containers for isolation. \
    Netlab/Containerlab heavily modify the network configuration of the system, which may break your network connectivity. There be dragons.
 
 
-## Approach 1: Dev Container
-
-This approach uses VS Code's Dev Container feature to provide a fully configured development environment with all dependencies pre-installed.
-
-### Prerequisites
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-- [Orbstack](https://orbstack.dev/)
-  - Ensure you are using Orbstack: `docker context use orbstack`
-  - Read the [Containerlab docs for MacOS](https://containerlab.dev/macos/) for details why Docker Desktop will not work here
-- Kernel Modules - SRv6 and VRF modules must be available in the host kernel.
-
-### Steps
-
-1. **Open the galactic-lab folder in VS Code**
-
-2. **Reopen in Container**
-   - Press `Cmd/Ctrl+Shift+P`
-   - Type and select: `Dev Containers: Reopen in Container`
-   - Wait for the container to build (first time only, ~5-10 minutes)
-   - Press `Cmd/Ctrl+Shift+P`
-   - Type and select: `Terminal: Create New Terminal`
-
-3. **You're ready!** Proceed to the [Building the Custom Kind Node](#building-the-custom-kind-node) section below.
-
-
-## Approach 2: Multipass VM
+## Approach 1: Multipass VM
 
 This approach creates an isolated Ubuntu VM using Multipass.
 
@@ -64,6 +38,32 @@ This approach creates an isolated Ubuntu VM using Multipass.
    python3 -m pip install $PIP_OPTIONS git+https://github.com/datum-cloud/netlab@galactic
    netlab install -y ubuntu ansible containerlab
    ```
+
+3. **You're ready!** Proceed to the [Building the Custom Kind Node](#building-the-custom-kind-node) section below.
+
+
+## Approach 2: Dev Container
+
+This approach uses VS Code's Dev Container feature to provide a fully configured development environment with all dependencies pre-installed.
+
+### Prerequisites
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- [Orbstack](https://orbstack.dev/)
+  - Ensure you are using Orbstack: `docker context use orbstack`
+  - Read the [Containerlab docs for MacOS](https://containerlab.dev/macos/) for details why Docker Desktop will not work here
+- Kernel Modules - SRv6 and VRF modules must be available in the host kernel.
+
+### Steps
+
+1. **Open the galactic-lab folder in VS Code**
+
+2. **Reopen in Container**
+   - Press `Cmd/Ctrl+Shift+P`
+   - Type and select: `Dev Containers: Reopen in Container`
+   - Wait for the container to build (first time only, ~5-10 minutes)
+   - Press `Cmd/Ctrl+Shift+P`
+   - Type and select: `Terminal: Create New Terminal`
 
 3. **You're ready!** Proceed to the [Building the Custom Kind Node](#building-the-custom-kind-node) section below.
 
