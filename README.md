@@ -10,6 +10,8 @@ There are different approaches to use this lab:
 4. If you are running Ubuntu/Debian Linux on your workstation - we _discourage_ running directly inside of it without a VM or Containers for isolation. \
    Netlab/Containerlab heavily modify the network configuration of the system, which may break your network connectivity. There be dragons.
 
+No matter which approach you choose, Galactic relies on the SRv6 and VRF modules in the Linux kernel. This means the system where you install Galactic must have those modules available.
+
 
 ## Approach 1: Multipass VM
 
@@ -52,7 +54,6 @@ This approach uses VS Code's Dev Container feature to provide a fully configured
 - [Orbstack](https://orbstack.dev/)
   - Ensure you are using Orbstack: `docker context use orbstack`
   - Read the [Containerlab docs for MacOS](https://containerlab.dev/macos/) for details why Docker Desktop will not work here
-- Kernel Modules - SRv6 and VRF modules must be available in the host kernel.
 
 ### Steps
 
