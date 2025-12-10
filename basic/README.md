@@ -77,7 +77,7 @@ docker exec -it k01-control-plane kubectl -n test-basic exec -it deploy/region1 
 
 While the ping is running, capture SRv6 encapsulated packets on core router c1 to observe the segment routing in action:
 ```bash
-netlab capture c1 eth1 'net 2001:db8:ff00::/40'
+netlab capture c1 eth1 -n 'net 2001:db8:ff00::/40'
 ```
 
 You should see IPv6 packets with SRv6 headers routing traffic between regions through the simulated internet core.
