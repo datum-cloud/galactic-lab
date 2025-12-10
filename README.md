@@ -18,7 +18,9 @@ This approach uses VS Code's Dev Container feature to provide a fully configured
 ### Prerequisites
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
-- [Orbstack](https://orbstack.dev/) (Read the [Containerlab docs for MacOS](https://containerlab.dev/macos/) for details why Docker Desktop will not work here)
+- [Orbstack](https://orbstack.dev/)
+  - Ensure you are using Orbstack: `docker context use orbstack`
+  - Read the [Containerlab docs for MacOS](https://containerlab.dev/macos/) for details why Docker Desktop will not work here
 - Kernel Modules - SRv6 and VRF modules must be available in the host kernel.
 
 ### Steps
