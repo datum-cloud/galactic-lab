@@ -1,5 +1,13 @@
 # =============================================================================
-# GALANTIC VPC DEFINITION
+# Galactic VPC Manifest - VPC and Attachment Definitions
+# =============================================================================
+# Author: Sajjad Ahmed
+# Company: Multi Naturals Inc.
+# Created: January 2026
+# Datum Source: https://www.datum.net/docs/galactic-vpc/#galactic-agent
+# =============================================================================
+#
+# GALACTIC VPC DEFINITION
 # =============================================================================
 apiVersion: galactic.datumapis.com/v1alpha
 kind: VPC

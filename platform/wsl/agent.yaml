@@ -1,3 +1,11 @@
+# =============================================================================
+# Galactic Agent DaemonSet for Kubernetes
+# =============================================================================
+# Author: Sajjad Ahmed
+# Company: Multi Naturals Inc.
+# Created: January 2026
+# Datum Source: https://www.datum.net/docs/galactic-vpc/#galactic-agent
+# =============================================================================
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
