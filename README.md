@@ -129,10 +129,10 @@ Run the lab inside WSL2 on Windows using Docker Engine installed in WSL.
    ```
 
 More details and step-by-step WSL setup are in:
-- `platform/wsl/README.md` (WSL lab usage)
-- `platform/wsl/TUTORIAL.md` (full walkthrough)
-- `platform/wsl/setup_wsl_lab.py` (automated setup)
-- `platform/wsl/run_lab_demo.py` (run the demos)
+- `platform/wsl/srv6-vpc-lab-attachment/README.md` (WSL lab usage)
+- `platform/wsl/srv6-vpc-lab-attachment/TUTORIAL.md` (full walkthrough)
+- `platform/wsl/srv6-vpc-lab-attachment/setup_wsl_lab.py` (automated setup)
+- `platform/wsl/srv6-vpc-lab-attachment/run_lab_demo.py` (run the demos)
 
 Proceed to the [Building the Custom Kind Node](#building-the-custom-kind-node) section below or to WSL-specific workflows under `platform/wsl`.
 
