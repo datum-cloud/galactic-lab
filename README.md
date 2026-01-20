@@ -78,6 +78,64 @@ cd kindest-node-galactic
 docker build . -t kindest/node:galactic
 ```
 
+## Approach 3: WSL (Windows Subsystem for Linux)
+
+Run the lab inside WSL2 on Windows using Docker Engine installed in WSL.
+
+### Prerequisites
+- Windows 10/11 with WSL2 enabled and Ubuntu installed
+- Docker Engine running inside WSL (systemd or `sudo service docker start`)
+- Python 3.10+, Go 1.20+, build-essential
+- Ensure `~/.local/bin` is in PATH for pip user installs
+
+### Steps
+1. **Prepare WSL environment**
+   ```bash
+   sudo apt update && sudo apt install -y python3-pip git curl build-essential
+   # Ensure ~/.local/bin is on PATH for this shell and future logins
+   echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.profile
+   source ~/.profile
+   ```
+
+2. **Clone the repo**
+   ```bash
+   git clone https://github.com/datum-cloud/galactic-lab.git
+   cd galactic-lab
+   ```
+
+3. **Install Netlab and dependencies (inside WSL)**
+   ```bash
+   export PIP_OPTIONS="--break-system-packages"
+   python3 -m pip install --user $PIP_OPTIONS git+https://github.com/datum-cloud/netlab@galactic
+   netlab install -y ubuntu ansible containerlab
+   ```
+
+4. **Build or run the lab**
+   - Build custom Kind node (if following Kind path):
+     ```bash
+     cd kindest-node-galactic
+     docker build . -t kindest/node:galactic
+     ```
+   - Or run the WSL SRv6 lab (if using `platform/wsl` contents):
+     ```bash
+     cd platform/wsl
+     netlab up
+     ```
+
+5. **Verify tooling**
+   ```bash
+   which netlab
+   docker ps
+   ```
+
+More details and step-by-step WSL setup are in:
+- `platform/wsl/srv6-vpc-lab-attachment/README.md` (WSL lab usage)
+- `platform/wsl/srv6-vpc-lab-attachment/TUTORIAL.md` (full walkthrough)
+- `platform/wsl/srv6-vpc-lab-attachment/setup_wsl_lab.py` (automated setup)
+- `platform/wsl/srv6-vpc-lab-attachment/run_lab_demo.py` (run the demos)
+
+Proceed to the [Building the Custom Kind Node](#building-the-custom-kind-node) section below or to WSL-specific workflows under `platform/wsl`.
+
 
 ## Next Steps
 
