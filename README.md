@@ -37,7 +37,7 @@ This approach creates an isolated Ubuntu VM using Multipass.
    cd /galactic-lab
    export PIP_OPTIONS="--break-system-packages"
    sudo apt update && sudo apt install -y python3-pip
-   python3 -m pip install $PIP_OPTIONS git+https://github.com/datum-cloud/netlab@galactic
+   python3 -m pip install $PIP_OPTIONS git+https://github.com/ipspace/netlab
    netlab install -y ubuntu ansible containerlab
    ```
 
@@ -106,7 +106,7 @@ Run the lab inside WSL2 on Windows using Docker Engine installed in WSL.
 3. **Install Netlab and dependencies (inside WSL)**
    ```bash
    export PIP_OPTIONS="--break-system-packages"
-   python3 -m pip install --user $PIP_OPTIONS git+https://github.com/datum-cloud/netlab@galactic
+   python3 -m pip install --user $PIP_OPTIONS git+https://github.com/ipspace/netlab
    netlab install -y ubuntu ansible containerlab
    ```
 
